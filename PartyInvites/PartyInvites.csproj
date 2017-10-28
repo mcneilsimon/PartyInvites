@@ -18,4 +18,6 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties bundleconfig_1json__JSONSchema="http://json.schemastore.org/coffeelint" /></VisualStudio></ProjectExtensions>
+
 </Project>

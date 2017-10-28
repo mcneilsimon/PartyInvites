@@ -1,0 +1,22 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-center" />
+        <title>Index</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </head>
+    <body>
+        <div class="text-center">
+            <h2>@ViewBag.Greeting</h2>
+            <h3>We're going to have an exciting party!</h3>
+            <h4>And you are invited</h4>
+            @*asp-action is an attribute that is an instruction to add a href attribute to the a element that contains a URL for an action method*@
+            <a class="btn btn-primary" asp-action="RsvpForm">RSVP Now!</a>
+        </div>
+    </body>
+</html>
