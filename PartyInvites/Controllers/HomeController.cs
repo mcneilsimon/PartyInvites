@@ -23,20 +23,31 @@ namespace PartyInvites.Controllers
         [HttpGet]
         public ViewResult RsvpForm()
         {
-
             return View();
         }
 
         [HttpPost]
-        public ViewResult RsvpForm(GuestInfo guestResponse)
+        public ViewResult RsvpForm(CompetitionInvite guestResponse)
         {
             if (ModelState.IsValid)
             {
                 ViewBag.FullName = "Simon McNeil";
                 ViewBag.ID = 991426860;
-                GuestResponse.AddResponse(guestResponse);
+
+                if (Request.Form["buttonValue"].Equals("accept"))
+                {
+                    guestResponse.WillAttend = true;
+                    GuestResponse.AddResponse(guestResponse);
+                }
+                else
+                {
+                    guestResponse.WillAttend = false;
+                }
+
                 return View("Thanks", guestResponse);
-            } else
+
+            }
+            else
             {
                 //there is a validation error
                 return View();

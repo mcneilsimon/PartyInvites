@@ -1,4 +1,4 @@
-﻿@model PartyInvites.Models.GuestInfo
+﻿@model PartyInvites.Models.CompetitionInvite
 
 @{ 
     Layout = null;
@@ -55,27 +55,17 @@
                         <label>Select a Technical Interest</label>
                         <select class="form-control" asp-for="Interest">
                             <option value="">Choose an option</option>
-                            <option value="@PartyInvites.Models.GuestInfo.TechnicalInterest.Iot">Internet of Things</option>
-                            <option value="@PartyInvites.Models.GuestInfo.TechnicalInterest.MotionSensors">Motion Sensor Technology</option>
-                            <option value="@PartyInvites.Models.GuestInfo.TechnicalInterest.DataAnalytics">Data Analytics Tools</option>
-                            <option value="@PartyInvites.Models.GuestInfo.TechnicalInterest.Programming">Computer Programming</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Will You Attend</label>
-                        <select class="form-control" asp-for="WillAttend">
-                            <option value="">Choose an option</option>
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-
+                            <option value="@PartyInvites.Models.CompetitionInvite.TechnicalInterest.Iot">Internet of Things</option>
+                            <option value="@PartyInvites.Models.CompetitionInvite.TechnicalInterest.MotionSensors">Motion Sensor Technology</option>
+                            <option value="@PartyInvites.Models.CompetitionInvite.TechnicalInterest.DataAnalytics">Data Analytics Tools</option>
+                            <option value="@PartyInvites.Models.CompetitionInvite.TechnicalInterest.Programming">Computer Programming</option>
                         </select>
                     </div>
 
                     @*after you hit submit the form posts back to the RsvpForm action method in the HomeController*@
                     <div class="text-center">
-                        <button class="btn btn-primary" type="submit">Accept Invitation</button>
-                        <button class="btn btn-primary" type="submit">Decline Invitation</button>
+                        <button class="btn btn-primary" name="buttonValue" value="accept" type="submit">Accept Invitation</button>
+                        <button class="btn btn-primary" name="buttonValue" value="decline" type="submit">Decline Invitation</button>
                     </div>
                 </form>
             </div>

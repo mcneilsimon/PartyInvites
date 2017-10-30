@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartyInvites.Models
 {
-    public class GuestInfo
+    public class CompetitionInvite
     {
         public enum TechnicalInterest { Iot = 1, MotionSensors = 2, DataAnalytics = 3, Programming = 4 }
 
@@ -27,7 +27,7 @@ namespace PartyInvites.Models
         public string SocialNetworkInterest { get; set; }
 
         [Required(ErrorMessage = "Please Specify Whether You'll Attend")]
-        public bool? WillAttend { get; set; }
+        public bool WillAttend { get; set; }
 
         [Required(ErrorMessage = "Please Specify Which Technical Interest You Are Interested In")]
         public TechnicalInterest? Interest { get; set; }
@@ -36,9 +36,9 @@ namespace PartyInvites.Models
 
     public class GuestResponse
     {
-        private static List<GuestInfo> responses = new List<GuestInfo>();
+        private static List<CompetitionInvite> responses = new List<CompetitionInvite>();
 
-        public static IEnumerable<GuestInfo> UserResponses
+        public static IEnumerable<CompetitionInvite> UserResponses
         {
             get
             {
@@ -46,7 +46,7 @@ namespace PartyInvites.Models
             }
         }
 
-        public static void AddResponse(GuestInfo response)
+        public static void AddResponse(CompetitionInvite response)
         {
             responses.Add(response);
         }

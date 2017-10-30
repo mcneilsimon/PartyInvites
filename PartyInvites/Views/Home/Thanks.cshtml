@@ -1,4 +1,4 @@
-﻿@model PartyInvites.Models.GuestInfo
+﻿@model PartyInvites.Models.CompetitionInvite
 
 @{ 
     Layout = null;
@@ -20,16 +20,16 @@
         </div>
         <p>
             <h1>Thank you, @Model.Name!</h1>
-            <label>You Were Enrolled In The @Model.Interest Track Of The Competition</label>
-            @*@if (Model.WillAttend == true)
+            @if (Model.WillAttend == true)
             {
                 @:It's great that you are coming!
+                <label>You Were Enrolled In The @Model.Interest Track Of The Competition</label>            
 
             } else
             {
                 @:Sorry to hear that you can't make it, but thanks for letting us know.
 
-            }*@
+            }
         </p>
         <p>Click <a class="nav-link" asp-action="ListResponses">here</a> to see who is coming.</p>
     </body>
