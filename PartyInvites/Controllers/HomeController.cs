@@ -32,6 +32,8 @@ namespace PartyInvites.Controllers
         {
             if (ModelState.IsValid)
             {
+                ViewBag.FullName = "Simon McNeil";
+                ViewBag.ID = 991426860;
                 GuestResponse.AddResponse(guestResponse);
                 return View("Thanks", guestResponse);
             } else

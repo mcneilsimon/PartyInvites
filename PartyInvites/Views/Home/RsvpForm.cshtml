@@ -62,9 +62,20 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label>Will You Attend</label>
+                        <select class="form-control" asp-for="WillAttend">
+                            <option value="">Choose an option</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+
+                        </select>
+                    </div>
+
                     @*after you hit submit the form posts back to the RsvpForm action method in the HomeController*@
                     <div class="text-center">
-                        <button class="btn btn-primary" type="submit">Submit RSVP</button>
+                        <button class="btn btn-primary" type="submit">Accept Invitation</button>
+                        <button class="btn btn-primary" type="submit">Decline Invitation</button>
                     </div>
                 </form>
             </div>

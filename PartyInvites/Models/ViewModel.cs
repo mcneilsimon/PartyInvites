@@ -7,7 +7,7 @@ namespace PartyInvites.Models
 {
     public class ViewModel
     {
-        public IEnumerable<GuestInfo> GuestInfo { get; set; }
-        public IEnumerable<GuestResponse> GuestResponse { get; set; }
+        //public IEnumerable<GuestInfo> GuestInfo { get; set; }
+        //public IEnumerable<GuestResponse> GuestResponse { get; set; }
     }
 }

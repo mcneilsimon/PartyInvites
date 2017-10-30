@@ -13,9 +13,15 @@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     </head>
     <body class="text-center">
+        <div class="panel panel-success">
+            <div class="panel-heading text-left">
+                <h3>@ViewBag.FullName <br />@ViewBag.ID</h3>
+            </div>
+        </div>
         <p>
             <h1>Thank you, @Model.Name!</h1>
-            @if (Model.WillAttend == true)
+            <label>You Were Enrolled In The @Model.Interest Track Of The Competition</label>
+            @*@if (Model.WillAttend == true)
             {
                 @:It's great that you are coming!
 
@@ -23,7 +29,7 @@
             {
                 @:Sorry to hear that you can't make it, but thanks for letting us know.
 
-            }
+            }*@
         </p>
         <p>Click <a class="nav-link" asp-action="ListResponses">here</a> to see who is coming.</p>
     </body>
