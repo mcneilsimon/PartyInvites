@@ -13,7 +13,7 @@
     </head>
     <body>
         <div class="panel-body">
-            <h2>Here is the list of people attending the party</h2>
+            <h2>Here is the list of people attending the event</h2>
             <table class="table table-sm table-striped table-bordered">
                 <thead>
                     <tr>
@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (PartyInvites.Models.GuestResponse r in Model)
+                    @foreach (PartyInvites.Models.GuestInfo r in Model)
                     {
                         <tr>
                             <td>@r.Name</td>

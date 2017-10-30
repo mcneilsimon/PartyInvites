@@ -23,15 +23,16 @@ namespace PartyInvites.Controllers
         [HttpGet]
         public ViewResult RsvpForm()
         {
+
             return View();
         }
 
         [HttpPost]
-        public ViewResult RsvpForm(GuestResponse guestResponse)
+        public ViewResult RsvpForm(GuestInfo guestResponse)
         {
             if (ModelState.IsValid)
             {
-                Repository.AddResponse(guestResponse);
+                GuestResponse.AddResponse(guestResponse);
                 return View("Thanks", guestResponse);
             } else
             {
@@ -42,8 +43,8 @@ namespace PartyInvites.Controllers
 
         public ViewResult ListResponses()
         {
-            //calls the static method Responses in the Repository controller
-            return View(Repository.Responses.Where(r => r.WillAttend == true));
+            //calls the static method UserResponses in the Repository controller
+            return View(GuestResponse.UserResponses.Where(r => r.WillAttend == true));
         }
     }
 }

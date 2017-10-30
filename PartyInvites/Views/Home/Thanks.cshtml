@@ -1,4 +1,4 @@
-﻿@model PartyInvites.Models.GuestResponse
+﻿@model PartyInvites.Models.GuestInfo
 
 @{ 
     Layout = null;
@@ -17,7 +17,7 @@
             <h1>Thank you, @Model.Name!</h1>
             @if (Model.WillAttend == true)
             {
-                @:It's great that you are coming. The drinks are already in the fridge!
+                @:It's great that you are coming!
 
             } else
             {

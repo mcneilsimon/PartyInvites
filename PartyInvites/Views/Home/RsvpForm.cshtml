@@ -1,4 +1,4 @@
-﻿@model PartyInvites.Models.GuestResponse
+﻿@model PartyInvites.Models.GuestInfo
 
 @{ 
     Layout = null;
@@ -19,26 +19,49 @@
             <div class="panel-body">
                 <form class="p-a-1" asp-action="RsvpForm" method="post">
                        <div asp-validation-summary="All"></div>
+
                     <div class="form-group">
                         <label asp-for="Name">Your Name:</label>
                         <input class="form-control" asp-for="Name" />
                     </div>
+
                     <div class="form-group">
                         <label asp-for="Email">Your Email:</label>
                         <input class="form-control" asp-for="Email" /> 
                     </div>
+
                     <div class="form-group">
                         <label asp-for="Phone">Your Phone:</label>
                         <input class="form-control" asp-for="Phone" />
                     </div>
+
                     <div class="form-group">
-                        <label>Will You Attend?</label>
-                        <select class="form-control" asp-for="WillAttend">
+                        <label asp-for="Address">Your Address:</label>
+                        <input class="form-control" asp-for="Address" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select a Social Network Interest</label>
+                        <select class="form-control" asp-for="SocialNetworkInterest">
                             <option value="">Choose an option</option>
-                            <option value="true">Yes, I'll be there</option>
-                            <option value="false">No, I can't come</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="Google">Google</option>
+                            <option value="Linkedin">LinkedIn</option>
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label>Select a Technical Interest</label>
+                        <select class="form-control" asp-for="Interest">
+                            <option value="">Choose an option</option>
+                            <option value="@PartyInvites.Models.GuestInfo.TechnicalInterest.Iot">Internet of Things</option>
+                            <option value="@PartyInvites.Models.GuestInfo.TechnicalInterest.MotionSensors">Motion Sensor Technology</option>
+                            <option value="@PartyInvites.Models.GuestInfo.TechnicalInterest.DataAnalytics">Data Analytics Tools</option>
+                            <option value="@PartyInvites.Models.GuestInfo.TechnicalInterest.Programming">Computer Programming</option>
+                        </select>
+                    </div>
+
                     @*after you hit submit the form posts back to the RsvpForm action method in the HomeController*@
                     <div class="text-center">
                         <button class="btn btn-primary" type="submit">Submit RSVP</button>
